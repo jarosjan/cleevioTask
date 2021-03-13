@@ -11,7 +11,7 @@ It is built on Java11, Spring, Maven and with the help of Hibernate it stores da
    * In pgAdmin use `postgres` and `Password#42` to connect to the database.
 2. After that, run the application. It should run on `localhost:8080`.
 
-`WatchController.java` accepts JSON and also XML requests - the structure of requests are visible in postman collection. The accepted requests are configurable in `WebConfig.class`. 
+`WatchController.java` accepts JSON and also XML requests - the structure of requests are visible in postman collection. The accepted requests are configurable in `WebConfig.class`. For created new row in the database is returned code 201. In case of invalid requests is returned error code 400.
 
 Thank you and have a nice day :star:.
 
