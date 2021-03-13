@@ -2,15 +2,15 @@ version: '3.5'
 
 services:
 
-  cleevio_postgres:
-    container_name: cleevio_database
+  postgres:
+    container_name: database
     image: postgres
     environment:
       POSTGRES_USER: 'postgres'
       POSTGRES_PASSWORD: 'Password#42'
       PGDATA: /data/postgres
     volumes:
-      - cleevio_postgres:/data/postgres
+      - postgres:/data/postgres
     ports:
       - "5432:5432"
     networks:
@@ -18,14 +18,14 @@ services:
     restart: always
 
 
-  cleevio_pgadmin:
-    container_name: cleevio_pgadmin_container
+  pgadmin:
+    container_name: pgadmin_container
     image: dpage/pgadmin4:5.0
     environment:
-      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-example@example.com}
-      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-cleevio@cleevio.com}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-cleevio}
     volumes:
-      - cleevio_pgadmin:/root/.pgadmin
+      - pgadmin:/root/.pgadmin
     ports:
       - "${PGADMIN_PORT:-5050}:80"
     networks:
@@ -36,5 +36,5 @@ networks:
     driver: bridge
 
 volumes:
-  cleevio_postgres:
-  cleevio_pgadmin:
+  postgres:
+  pgadmin:

@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "4be6d80d-b143-445a-8654-2a7d82ada6af",
+		"name": "Cleevio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "createWatch from JSON",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"title\": \"Prim\",\r\n\"price\": \"250000\",\r\n\"description\": \"A watch with a water fountain picture\",\r\n\"fountain\": \"R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/watch",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"watch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createWatch from XML",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<watch>\r\n  <title>Prim</title>\r\n  <price>250000</price>\r\n  <description>A watch with a water fountain picture</description>\r\n  <fountain>R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=</fountain>\r\n</watch>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/watch",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"watch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test bad request JSON",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"price\": \"0\",\r\n\"description\": \"A watch with a water fountain picture\",\r\n\"fountain\": \"R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/watch",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"watch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test bad request XML",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<watch>\r\n  <price>250000</price>\r\n  <description>A watch with a water fountain picture</description>\r\n  <fountain>R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=</fountain>\r\n</watch>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/watch",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"watch"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
