@@ -12,3 +12,7 @@ It is built on Java11, Spring, Maven and with the help of Hibernate it stores da
 2. After that, run the application. It should run on `localhost:8080`.
 
 `WatchController.java` accepts JSON and also XML requests - the structure of requests are visible in postman collection. The accepted requests are configurable in `WebConfig.class`. 
+
+Thank you and have a nice day :star:.
+
+JJ
